@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Sharon & Vimbai Events</title>
+  <link rel="stylesheet" href="styles.css">
+   <!-- Google Fonts (fallback until Virtual font is installed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Alice&family=Ephesis&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <img src="images/logo.png" alt="Sharon & Vimbai Logo" class="logo">
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+  <section class="contact">
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+
+      <form action="#" method="post" class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="event">Your Event</label>
+        <select id="event" name="event" required>
+          <option value="">Please select an event</option>
+          <option value="planning">Wedding</option>
+          <option value="planning">Traditional Wedding</option>
+          <option value="bespoke">Intimate Dining</option>
+          <option value="bespoke">Children's Birthday</option>
+          <option value="coordination">Milestone Celebration</option>
+          <option value="bespoke">Drinks Station</option>
+        </select>
+
+        <label for="event">Your Service</label>
+        <select id="event" name="event" required>
+          <option value="">Please select a service</option>
+          <option value="planning">Event Planning</option>
+          <option value="bespoke">Even Design & Styling</option>
+          <option value="bespoke">Decor and Set-Up</option>
+          <option value="coordination">On-the-day Coordination</option>
+          <option value="bespoke">Bespoke Packages</option>
+        </select>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sharon & Vimbai Events | All Rights Reserved</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,747 @@
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+
+main {
+  flex: 1;
+}
+
+/* ===== Header & Nav ===== */
+.header-container {
+  background: #edd0cf;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  max-height: 250px;
+}
+
+.navbar {
+  background: #edd0cf;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  padding: 1rem 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.nav-links li a:hover{
+  color: #d78294;
+  opacity: 0.8;
+}
+
+/* ===== Banner Image ===== */
+.banner {
+  background: #d78294;
+  text-align: center;
+  padding: 10px; /* equal border on all sides */
+}
+
+.banner img {
+  width: 100%; 
+  display: block;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: 3rem 0rem;
+  background: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  
+  line-height: 0.35;
+}
+
+.hero .wecare {
+  color: #cb3067;
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hero .detail {
+  color: #333;
+  font-weight: bold;
+  font-size: 2rem;
+  display: block;
+}
+
+.hero-img {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-img img {
+  max-width: 100%;
+}
+
+.hero-img .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #cb3067;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.hero-img .btn:hover {
+  background: #a2254f;
+}
+
+/* ===== About Us ===== */
+.about {
+  background: #edd0cf;
+  margin: 40px auto 0 auto;       /* white space around section */
+  padding: 3rem 2rem;
+  max-width: 1210px;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  overflow: visible;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.about-content {
+  max-width: 60%;
+  z-index: 1;
+}
+
+.about h2 {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+}
+
+.about-img {
+  max-width: 40%;
+  position: absolute;
+  top: -40px;    /* push upward so it overlaps */
+  right: -30px;  /* push rightward beyond pink background */
+  transform: translateX(60px);  /* start offset to the right */
+  opacity: 0;                   /* start hidden */
+  transition: all 0.8s ease-out;
+}
+
+.about-img.show {
+  transform: translateX(0);     /* slide into place */
+  opacity: 1;                   /* fade in */
+}
+
+.about-img img {
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #cb3067;
+  color: #fff;
+  text-align: center;
+  height: 80px;
+  bottom: 0;
+  padding: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-content, .about-img {
+    max-width: 100%;
+  }
+}
+
+
+/* ===== Services Page ===== */
+
+/* ===== Services Intro ===== */
+.services-intro {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.intro-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.services-intro h1 {
+  font-size: 5rem;
+  color: #cb3067;
+  margin-bottom: 1.5rem;
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+}
+
+.services-intro p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.services {
+  background: #fdf3f2; /* light pink background */
+  padding: 4rem 2rem;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.services h1 {
+  font-family: "Ephesis", cursive;
+  font-size: 5rem;
+  color: #cb3067;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.service-item {
+  flex: 1 1 30%;
+  background: #fff; /* cards white */
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* subtle depth */
+}
+
+.service-item h2 {
+  font-size: 1.5rem;
+  color: #cb3067;
+  margin-bottom: 1rem;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+
+
+/* ===== Process Section ===== */
+.process {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.process-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.process h1 {
+  font-family: "Ephesis", cursive;
+  font-size: 4rem;
+  color: #cb3067;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Base arrow styles */
+.arrow {
+  background: #cb3067;
+  color: #fff;
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Step 1, 3, 5 → flat left, arrow right */
+.arrow.right {
+  clip-path: polygon(
+    0 0, 85% 0, 100% 50%, 85% 100%, 0 100% 
+  );
+}
+
+/* Step 2, 4, 6 → angled both sides */
+.arrow.middle {
+  clip-path: polygon(
+     0 0, 85% 0, 100% 50%, 85% 100%, 0 100%, 15% 50%
+  );
+}
+
+.arrow.end {
+  clip-path: polygon(
+    0 0, 85% 0, 85% 100%, 0 100%, 15% 50%
+  );
+}
+
+.arrow span {
+  display: block;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.arrow strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+
+
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .service-list {
+    flex-direction: column;
+  }
+}
+
+/* ===== Contact Page (New Layout) ===== */
+.contact {
+  background: #f8eaea; /* soft pink background */
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact h1 {
+  font-size: 5rem;
+  color: #cb3067;
+  font-family: "Ephesis", cursive;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #f8eaea;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #000;
+  text-align: left;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  box-shadow: 0 0 0 2px #cb3067;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+.contact-form button {
+  align-self: center;
+  background: #cb7a88; /* soft rose pink */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #b55f71;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 90%;
+  }
+}
+
+/* ===== Testimonials Page ===== */
+
+.testimonials-page {
+  background: #f8eaea;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials-page h1 {
+  font-family: "Ephesis", cursive;
+  color: #cb3067;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.testimonial-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Individual testimonial blocks */
+.testimonial-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  gap: 2rem;
+}
+
+/* Alternate layout: even rows flip sides */
+.testimonial-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Images */
+.testimonial-image {
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-image img {
+  width: 100%;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Testimonial cards */
+.testimonial-card {
+  width: 50%;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+  margin-left: -3rem; /* overlap the image slightly */
+}
+
+
+/* Alternate layout (flipped) */
+.testimonial-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.testimonial-item:nth-child(even) .testimonial-card {
+  margin-left: 0;
+  margin-right: -3rem; /* overlap the image slightly */
+}
+
+/* Text styles */
+.testimonial-card .quote {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .testimonial-item {
+    flex-direction: column;
+  }
+  .testimonial-item:nth-child(even) {
+    flex-direction: column;
+  }
+  .testimonial-image, .testimonial-card {
+    width: 100%;
+  }
+  .testimonial-item:nth-child(odd) .testimonial-card,
+  .testimonial-item:nth-child(even) .testimonial-card {
+    margin: 0;
+  }
+}
+
+/* ===== Portfolio Page ===== */
+/* .portfolio-page { 
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.portfolio-page h1 {
+  font-family: "Ephesis", cursive;
+  color: #cb3067;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.portfolio-page .intro {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual portfolio cards */
+/* .portfolio-item { 
+  text-align: center;
+}
+
+.portfolio-image {
+  position: relative;
+  border: 8px solid #edd0cf; /* Light pink border 
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.portfolio-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-image:hover img {
+  transform: scale(1.05); /* Subtle zoom effect 
+}*/
+
+/* Centered button */
+/* .portfolio-btn {
+  position: absolute;
+  bottom: 1.5rem; /* 👈 distance from bottom edge 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #cb3067;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.portfolio-btn:hover {
+  background: #a2254f;
+}
+
+/* Section title under each image */
+/* .portfolio-item h2 { 
+  color: #333;
+  font-family: "Alice", serif;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .portfolio-gallery {
+    gap: 2rem;
+  }
+
+  .portfolio-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}*/
+
+/* Portfolio Page */
+.portfolio-page {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Instagram Header */
+.insta-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.insta-profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.insta-info h2 {
+  margin: 0;
+  font-family: 'Alice', serif;
+}
+
+.insta-info a {
+  text-decoration: none;
+  color: #333;
+}
+
+.insta-info a:hover {
+  text-decoration: underline;
+}
+
+.insta-handle {
+  color: #777;
+  margin: 0.3rem 0 1rem;
+}
+
+.insta-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.insta-action {
+  margin-left: auto;
+}
+
+.follow-btn {
+  padding: 0.6rem 1.6rem;
+  background: #edd0cf;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.follow-btn:hover {
+  background: #d78294;
+}
+
+/* Instagram Grid */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.insta-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .insta-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .insta-action {
+    margin-left: 0;
+  }
+
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
