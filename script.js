@@ -20,3 +20,40 @@ document.addEventListener("scroll", () => {
     aboutImg.style.opacity = progress;
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop default form submission
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const eventSelect = document.getElementById("event-type");
+    const serviceSelect = document.getElementById("service");
+
+    const eventType = eventSelect.options[eventSelect.selectedIndex].text;
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+
+    const message = document.getElementById("message").value;
+
+    const subject = `New ${eventType} Enquiry – ${service}`;
+
+    const body = `
+Name: ${name}
+Email: ${email}
+Event Type: ${eventType}
+Service: ${service}
+
+Message:
+${message}
+    `;
+
+    const mailtoLink = `mailto:solandaba4@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.assign(mailtoLink);
+  });
+});
+
