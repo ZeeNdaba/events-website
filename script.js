@@ -49,7 +49,7 @@ Message:
 ${message}
     `;
 
-    const mailtoLink = `mailto:solandaba4@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:sveventsplanningdecor@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
 
