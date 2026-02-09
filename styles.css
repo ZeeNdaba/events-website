@@ -365,11 +365,9 @@ footer {
 
 
 
-
-
 /* Responsive tweaks */
 @media (max-width: 900px) {
-  .service-list {
+  .service-list{
     flex-direction: column;
   }
 }
@@ -767,23 +765,6 @@ footer {
     height: auto;
   }
 
-
-  /* .about { 
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about img {
-    width: 100%;
-    height: auto;
-    position: relative;
-    
-  }
-
-  .about-content {
-    position: relative;
-    padding: 2rem 1rem;
-  }*/
 
   .about {
     display: flex;
