@@ -745,3 +745,116 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .home-section,
+  .hero,
+  .about,
+  .services-preview,
+  .home-about,
+  .home-services {
+    display: block;
+    height: auto;
+  }
+
+
+  /* .about { 
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    
+  }
+
+  .about-content {
+    position: relative;
+    padding: 2rem 1rem;
+  }*/
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+
+  .about-content {
+    position: static;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .about-content h2 {
+    position: static;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .about-content p {
+    position: static;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .about-img {
+    position: static;
+    width: 100%;
+  }
+
+  .about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero {
+    height: auto;
+    min-height: unset;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-content {
+    position: relative;
+    padding: 2rem 1rem;
+  }
+
+  .wecare {
+    position: relative; /* stop weird absolute overlap */
+    font-size: 2rem;    /* downscale for mobile */
+    line-height: 1;   /* PREVENT overlap */
+    text-align: center;
+    padding: 0.5rem 1rem;
+    white-space: normal; /* allow wrapping properly */
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
