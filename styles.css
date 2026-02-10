@@ -370,6 +370,9 @@ footer {
   .service-list{
     flex-direction: column;
   }
+  .steps {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
 }
 
 /* ===== Contact Page (New Layout) ===== */
@@ -548,6 +551,9 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 900px) {
+  .testimonials-page h1{
+    font-size: 4rem;
+  }
   .testimonial-item {
     flex-direction: column;
   }
